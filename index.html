@@ -65,6 +65,18 @@
             animation: woolDrift 45s linear infinite;
         }
 
+        .texture-wool-white {
+            background-color: #ffffff;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.6) 0%, rgba(249, 250, 251, 0.8) 50%, rgba(243, 244, 246, 0.95) 100%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 20 16'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10,16 C10,6 2,4 2,-2 M10,16 C10,6 18,4 18,-2' stroke='%23e5e7eb' stroke-opacity='0.4' stroke-width='8' transform='translate(0,2)'/%3E%3Cpath d='M10,16 C10,6 2,4 2,-2 M10,16 C10,6 18,4 18,-2' stroke='%23f3f4f6' stroke-opacity='0.3' stroke-width='6'/%3E%3Cpath d='M10,16 C10,6 2,4 2,-2 M10,16 C10,6 18,4 18,-2' stroke='%23ffffff' stroke-opacity='0.2' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+            
+            background-blend-mode: normal, overlay, soft-light;
+            background-size: 100% 100%, 150px 150px, 30px 24px;
+            animation: woolDrift 45s linear infinite;
+        }
+
         /* Border Glow Animation (Branco suave) */
         @keyframes borderGlowWhite {
             0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.2); }
@@ -226,6 +238,48 @@
         }
 
         .btn-premium-emerald:active {
+            transform: translateY(-1px) scale(0.97);
+        }
+
+        .btn-premium-rose {
+            background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 20px -5px rgba(244, 63, 94, 0.35), 0 8px 10px -6px rgba(244, 63, 94, 0.3);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-premium-rose::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -60%; width: 30%; height: 200%;
+            background: linear-gradient(
+                to right, 
+                rgba(255, 255, 255, 0) 0%, 
+                rgba(255, 255, 255, 0.4) 50%, 
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .btn-premium-rose:hover::after {
+            left: 130%;
+            opacity: 1;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-premium-rose:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 20px 35px -5px rgba(244, 63, 94, 0.45), 0 0 20px rgba(244, 63, 94, 0.25);
+            background: linear-gradient(135deg, #f54e6b 0%, #e82a53 100%);
+        }
+
+        .btn-premium-rose:active {
             transform: translateY(-1px) scale(0.97);
         }
 
@@ -398,7 +452,6 @@
 
     </main>
 
-    <!-- Seção de Linhas EuroRoma (Segunda Dobra) -->
     <section id="linhas" class="w-full py-24 px-6 md:px-12 lg:px-24 bg-gray-50 border-t border-gray-100 relative z-10 gs-trigger-lines">
         <!-- Badge, Título e Subtítulo -->
         <div class="max-w-4xl mx-auto text-center mb-16">
@@ -410,7 +463,7 @@
                 Cores para todas as criações
             </h2>
             <p class="text-gray-600 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto font-sans">
-                Barbante sustentável para fazer arte e o bem para o planeta. Produzido de forma ecológica a partir de resíduos têxteis, sem o uso de água, proporcionando maciez incomparável para seus trabalhos.
+                Barbante sustentável para fazer arte e o bem para o planeta. Produzido de forma ecológica a partir de resíduos têxteis, sem o uso of água, proporcionando maciez incomparável para seus trabalhos.
             </p>
         </div>
 
@@ -526,6 +579,304 @@
                         <div class="text-sm font-bold text-gray-800">Fale com nossa especialista de fios</div>
                     </div>
                     <a id="whatsapp-colors-btn" href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20ajuda%20para%20escolher%20as%20cores%20do%20Barbante%20EuroRoma.%20Tenho%20interesse%20na%20cor%20802%20Esmeralda." target="_blank" class="w-full sm:w-auto btn-premium-emerald px-8 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2.5 group/btn select-none">
+                        <span>Consultar Cores</span>
+                        <svg class="w-5 h-5 fill-current transition-transform duration-300 group-hover/btn:scale-110" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Seção Amigurumi Chenille (Terceira Dobra) -->
+    <section id="chenille" class="w-full py-24 px-6 md:px-12 lg:px-24 texture-wool border-t border-white/10 relative z-10 gs-trigger-chenille">
+        <!-- Badge, Título e Subtítulo (em branco/contraste contra o vermelho) -->
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-white mb-6 font-semibold text-xs tracking-wider uppercase select-none">
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-300 animate-pulse"></span>
+                ✦ Lançamento Aveludado Premium
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-white mb-6 leading-tight">
+                Amigurumi Chenille
+            </h2>
+            <p class="text-white/90 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto font-sans">
+                O toque super fofinho e aveludado que transforma seus amigurumis em peças de luxo. Feito 100% de poliéster de altíssima qualidade, proporcionando textura encorpada de pelúcia que desliza suavemente na agulha.
+            </p>
+        </div>
+
+        <!-- Grid Split: Showcase de Produto (Esquerda) vs Catálogo de Cores (Direita) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-start max-w-7xl mx-auto">
+            
+            <!-- Coluna Esquerda: Showcase do Novelo -->
+            <div class="lg:col-span-5 flex flex-col items-center lg:items-stretch bg-white border border-red-50 p-6 sm:p-8 rounded-2xl shadow-xl shadow-red-950/20 hover:shadow-2xl hover:shadow-red-950/30 transition-all duration-500 group relative overflow-hidden text-gray-900">
+                <div class="absolute -right-16 -top-16 w-48 h-48 rounded-full bg-red-50/50 blur-2xl pointer-events-none group-hover:bg-red-100/50 transition-colors duration-500"></div>
+                
+                <!-- Imagem do Novelo -->
+                <div class="relative z-10 flex justify-center mb-8 bg-red-50/20 rounded-xl p-6">
+                    <img src="amigurumi-chenille.png" alt="Novelo Amigurumi Chenille" class="w-48 sm:w-56 h-auto object-contain drop-shadow-[0_10px_20px_rgba(244,63,94,0.25)] group-hover:scale-105 transition-transform duration-500">
+                </div>
+                
+                <!-- Informações do Fio -->
+                <div class="relative z-10 text-center lg:text-left">
+                    <div class="flex items-center justify-center lg:justify-between mb-4">
+                        <span class="font-mono text-xs font-bold text-red-800 bg-red-50 border border-red-100 px-3 py-1 rounded-full uppercase tracking-wider">Fio Aveludado</span>
+                        <span class="text-gray-500 text-xs hidden lg:block">Código: AC-909</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-2xl text-gray-900 mb-3">Amigurumi Chenille Círculo</h3>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Textura aveludada incomparável de pelúcia. Ideal para amigurumis gigantes, naninhas, peças de decoração infantil e fofuras sem fim.
+                    </p>
+                    
+                    <!-- Ficha Técnica -->
+                    <div class="grid grid-cols-2 gap-4 border-t border-gray-100 pt-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center text-red-700">
+                                <i data-lucide="scissors" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400">Espessura</div>
+                                <div class="text-sm font-bold text-gray-800">Tex 909</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center text-red-700">
+                                <i data-lucide="scale" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400">Peso/Metragem</div>
+                                <div class="text-sm font-bold text-gray-800">100g / 110m</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coluna Direita: Catálogo de Cores -->
+            <div class="lg:col-span-7 bg-white border border-red-50 p-6 sm:p-8 rounded-2xl shadow-xl shadow-red-950/20 flex flex-col justify-between h-full relative overflow-hidden group text-gray-900">
+                <div class="absolute -left-16 -bottom-16 w-48 h-48 rounded-full bg-red-50/30 blur-2xl pointer-events-none"></div>
+                
+                <div class="relative z-10 mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-serif font-bold text-2xl text-gray-900">Catálogo de Cores</h3>
+                        <span class="font-mono text-xs text-red-800 bg-red-50 px-3 py-1 rounded">33 Cores Disponíveis</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Explore nossa ampla cartela de cores aveludadas, perfeitas para dar vida, maciez e extrema fofura aos seus projetos de amigurumi.
+                    </p>
+                    
+                    <!-- Seletor de Cores Interativo -->
+                    <div class="mb-6 p-4 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div id="chenille-selected-color-indicator" class="w-8 h-8 rounded-full border-2 border-white shadow-md transition-all duration-300" style="background-color: #e6b8d2;"></div>
+                            <div>
+                                <div class="text-xs text-gray-400 font-medium">Cor Selecionada</div>
+                                <div id="chenille-selected-color-name" class="text-base font-bold text-gray-800 font-serif">3077 Quartzo</div>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-50 text-red-700 border border-red-100">
+                            <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                            Em Estoque
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-6 sm:grid-cols-8 gap-4 justify-items-center bg-gray-50/50 p-4 rounded-xl border border-gray-100" id="chenille-color-dots-grid">
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-gray-200 shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ffffff;" data-color-name="8001 Branco" data-color-hex="#ffffff" title="8001 Branco"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #f3eee3;" data-color-name="8176 Off-White" data-color-hex="#f3eee3" title="8176 Off-White"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #f2efe4;" data-color-name="1706 Flocos" data-color-hex="#f2efe4" title="1706 Flocos"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #c8bfa9;" data-color-name="7062 Amendoim" data-color-hex="#c8bfa9" title="7062 Amendoim"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #9a7f6e;" data-color-name="7727 Madeira" data-color-hex="#9a7f6e" title="7727 Madeira"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #a37a5c;" data-color-name="7713 Lenha" data-color-hex="#a37a5c" title="7713 Lenha"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #876458;" data-color-name="7567 Cacau" data-color-hex="#876458" title="7567 Cacau"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #4a352f;" data-color-name="7569 Brigadeiro" data-color-hex="#4a352f" title="7569 Brigadeiro"></button>
+                        
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #8e8680;" data-color-name="7066 Pedra Quente" data-color-hex="#8e8680" title="7066 Pedra Quente"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #dbba8c;" data-color-name="7076 Caramelito" data-color-hex="#dbba8c" title="7076 Caramelito"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #e2d6b5;" data-color-name="7072 Centeio" data-color-hex="#e2d6b5" title="7072 Centeio"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ffd200;" data-color-name="1317 Solar" data-color-hex="#ffd200" title="1317 Solar"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #d29d18;" data-color-name="7069 Mostarda" data-color-hex="#d29d18" title="7069 Mostarda"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #b68641;" data-color-name="7148 Craft" data-color-hex="#b68641" title="7148 Craft"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #a74e37;" data-color-name="7529 Terracota" data-color-hex="#a74e37" title="7529 Terracota"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #d35b39;" data-color-name="4140 Tijolo" data-color-hex="#d35b39" title="4140 Tijolo"></button>
+                        
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #e63946;" data-color-name="3635 Paixão" data-color-hex="#e63946" title="3635 Paixão"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #d6287c;" data-color-name="3182 Pitaya" data-color-hex="#d6287c" title="3182 Pitaya"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #e7a39d;" data-color-name="3112 Penélope" data-color-hex="#e7a39d" title="3112 Penélope"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ebdcd2;" data-color-name="3148 Macadâmia" data-color-hex="#ebdcd2" title="3148 Macadâmia"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none ring-2 ring-[#e11d48] ring-offset-2 scale-110 shadow-md" style="background-color: #e6b8d2;" data-color-name="3077 Quartzo" data-color-hex="#e6b8d2" title="3077 Quartzo"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #9c8cc4;" data-color-name="6029 Orquídea" data-color-hex="#9c8cc4" title="6029 Orquídea"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #6a4c93;" data-color-name="6034 Realeza" data-color-hex="#6a4c93" title="6034 Realeza"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #0f4c81;" data-color-name="2745 Marinheiro" data-color-hex="#0f4c81" title="2745 Marinheiro"></button>
+                        
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #0080ff;" data-color-name="2500 Acqua" data-color-hex="#0080ff" title="2500 Acqua"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #9bbdf9;" data-color-name="2137 Hortênsia" data-color-hex="#9bbdf9" title="2137 Hortênsia"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #a0c4ff;" data-color-name="2012 Azul-Candy" data-color-hex="#a0c4ff" title="2012 Azul-Candy"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #c1f0db;" data-color-name="2204 Verde-Candy" data-color-hex="#c1f0db" title="2204 Verde-Candy"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #9dc08b;" data-color-name="5083 Eco" data-color-hex="#9dc08b" title="5083 Eco"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #3b5e4c;" data-color-name="5442 Natureza" data-color-hex="#3b5e4c" title="5442 Natureza"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #9ca3af;" data-color-name="8212 Cromado" data-color-hex="#9ca3af" title="8212 Cromado"></button>
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #71717a;" data-color-name="8069 Matrix" data-color-hex="#71717a" title="8069 Matrix"></button>
+                        
+                        <button class="chenille-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #18181b;" data-color-name="8990 Preto" data-color-hex="#18181b" title="8990 Preto"></button>
+                    </div>
+                </div>
+                
+                <!-- Call To Action do Catálogo -->
+                <div class="relative z-10 border-t border-gray-100 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div class="text-center sm:text-left">
+                        <div class="text-xs text-gray-400">Dúvidas sobre combinações de pelúcia?</div>
+                        <div class="text-sm font-bold text-gray-800">Fale com nossa equipe pelo WhatsApp</div>
+                    </div>
+                    <a id="whatsapp-chenille-btn" href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20fio%20Amigurumi%20Chenille.%20Tenho%20interesse%20na%20cor%203077%20Quartzo." target="_blank" class="w-full sm:w-auto btn-premium-rose px-8 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2.5 group/btn select-none">
+                        <span>Consultar Cores</span>
+                        <svg class="w-5 h-5 fill-current transition-transform duration-300 group-hover/btn:scale-110" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Seção Amigurumi Tradicional Círculo (Quarta Dobra) -->
+    <section id="circulo" class="w-full py-24 px-6 md:px-12 lg:px-24 bg-gray-50 border-t border-gray-100 relative z-10 gs-trigger-circulo">
+        <!-- Badge, Título e Subtítulo -->
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-rose-200 bg-rose-50 text-rose-800 mb-6 font-semibold text-xs tracking-wider uppercase select-none">
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                ✦ Clássico 100% Algodão Mercerizado
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-gray-900 mb-6 leading-tight">
+                Amigurumi Tradicional Círculo
+            </h2>
+            <p class="text-gray-600 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto font-sans">
+                O fio queridinho de todo artesão para criar amigurumis perfeitos. Produzido com 100% de algodão mercerizado, oferece brilho incrível, maciez e cores extremamente vivas que valorizam cada ponto.
+            </p>
+        </div>
+
+        <!-- Grid Split: Showcase de Produto (Esquerda) vs Catálogo de Cores (Direita) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-start max-w-7xl mx-auto">
+            
+            <!-- Coluna Esquerda: Showcase do Novelo -->
+            <div class="lg:col-span-5 flex flex-col items-center lg:items-stretch bg-white border border-gray-100 p-6 sm:p-8 rounded-2xl shadow-xl shadow-gray-100/50 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 group relative overflow-hidden text-gray-900">
+                <div class="absolute -right-16 -top-16 w-48 h-48 rounded-full bg-rose-50/50 blur-2xl pointer-events-none group-hover:bg-rose-100/50 transition-colors duration-500"></div>
+                
+                <!-- Imagem do Novelo -->
+                <div class="relative z-10 flex justify-center mb-8 bg-rose-50/20 rounded-xl p-6">
+                    <img src="amigurumi-circulo.png" alt="Novelo Amigurumi Círculo" class="w-48 sm:w-56 h-auto object-contain drop-shadow-[0_10px_20px_rgba(244,63,94,0.15)] group-hover:scale-105 transition-transform duration-500">
+                </div>
+                
+                <!-- Informações do Fio -->
+                <div class="relative z-10 text-center lg:text-left">
+                    <div class="flex items-center justify-center lg:justify-between mb-4">
+                        <span class="font-mono text-xs font-bold text-rose-800 bg-rose-50 border border-rose-100 px-3 py-1 rounded-full uppercase tracking-wider">Fio Mercerizado</span>
+                        <span class="text-gray-500 text-xs hidden lg:block">Código: AC-254</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-2xl text-gray-900 mb-3">Fio Amigurumi Tradicional</h3>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Toque macio, excelente rendimento e brilho sutil. Ideal para crochê e tricô em projetos de amigurumi tridimensionais detalhados e estruturados.
+                    </p>
+                    
+                    <!-- Ficha Técnica -->
+                    <div class="grid grid-cols-2 gap-4 border-t border-gray-100 pt-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-rose-50 flex items-center justify-center text-rose-700">
+                                <i data-lucide="scissors" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400">Espessura</div>
+                                <div class="text-sm font-bold text-gray-800">Tex 492</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-rose-50 flex items-center justify-center text-rose-700">
+                                <i data-lucide="scale" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400">Peso/Metragem</div>
+                                <div class="text-sm font-bold text-gray-800">125g / 254m</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coluna Direita: Catálogo de Cores -->
+            <div class="lg:col-span-7 bg-white border border-gray-100 p-6 sm:p-8 rounded-2xl shadow-xl shadow-gray-100/50 flex flex-col justify-between h-full relative overflow-hidden group text-gray-900">
+                <div class="absolute -left-16 -bottom-16 w-48 h-48 rounded-full bg-rose-50/30 blur-2xl pointer-events-none"></div>
+                
+                <div class="relative z-10 mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-serif font-bold text-2xl text-gray-900">Catálogo de Cores</h3>
+                        <span class="font-mono text-xs text-rose-800 bg-rose-50 px-3 py-1 rounded">32 Cores Populares</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Explore nossa seleção de cores clássicas para dar vida, riqueza de detalhes e excelente definição de pontos aos seus projetos de amigurumi.
+                    </p>
+                    
+                    <!-- Seletor de Cores Interativo -->
+                    <div class="mb-6 p-4 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div id="circulo-selected-color-indicator" class="w-8 h-8 rounded-full border-2 border-white shadow-md transition-all duration-300" style="background-color: #c6182a;"></div>
+                            <div>
+                                <div class="text-xs text-gray-400 font-medium">Cor Selecionada</div>
+                                <div id="circulo-selected-color-name" class="text-base font-bold text-gray-800 font-serif">3528 Carmim</div>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-100">
+                            <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                            Em Estoque
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-6 sm:grid-cols-8 gap-4 justify-items-center bg-gray-50/50 p-4 rounded-xl border border-gray-100" id="circulo-color-dots-grid">
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ffffff;" data-color-name="8001 Branco" data-color-hex="#ffffff" title="8001 Branco"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #f3eee3;" data-color-name="8176 Off-White" data-color-hex="#f3eee3" title="8176 Off-White"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #eae3d2;" data-color-name="20 Natural" data-color-hex="#eae3d2" title="20 Natural"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #f4eedb;" data-color-name="1104 Baunilha" data-color-hex="#f4eedb" title="1104 Baunilha"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ebd2c3;" data-color-name="7525 Porcelana" data-color-hex="#ebd2c3" title="7525 Porcelana"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #eedecf;" data-color-name="7523 Chantilly" data-color-hex="#eedecf" title="7523 Chantilly"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #c49d7f;" data-color-name="7625 Castanha" data-color-hex="#c49d7f" title="7625 Castanha"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #856151;" data-color-name="7567 Cacau" data-color-hex="#856151" title="7567 Cacau"></button>
+                        
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #4c352e;" data-color-name="7569 Brigadeiro" data-color-hex="#4c352e" title="7569 Brigadeiro"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #fed83e;" data-color-name="1289 Canário" data-color-hex="#fed83e" title="1289 Canário"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #fae9b3;" data-color-name="1112 Creme" data-color-hex="#fae9b3" title="1112 Creme"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #fda42a;" data-color-name="1317 Solar" data-color-hex="#fda42a" title="1317 Solar"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ec7230;" data-color-name="4004 Cenoura" data-color-hex="#ec7230" title="4004 Cenoura"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none ring-2 ring-rose-500 ring-offset-2 scale-110 shadow-md" style="background-color: #c6182a;" data-color-name="3528 Carmim" data-color-hex="#c6182a" title="3528 Carmim"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #e73c4d;" data-color-name="3583 Tulipa" data-color-hex="#e73c4d" title="3583 Tulipa"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ebbad4;" data-color-name="3077 Quartzo" data-color-hex="#ebbad4" title="3077 Quartzo"></button>
+                        
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #d8297b;" data-color-name="3182 Pitaya" data-color-hex="#d8297b" title="3182 Pitaya"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #f586ab;" data-color-name="3131 Chiclete" data-color-hex="#f586ab" title="3131 Chiclete"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ecaba9;" data-color-name="3112 Penélope" data-color-hex="#ecaba9" title="3112 Penélope"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #c194d3;" data-color-name="6060 Lilás" data-color-hex="#c194d3" title="6060 Lilás"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #998cc2;" data-color-name="6029 Orquídea" data-color-hex="#998cc2" title="6029 Orquídea"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #6c4fa1;" data-color-name="6034 Realeza" data-color-hex="#6c4fa1" title="6034 Realeza"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #a4c8f0;" data-color-name="2012 Azul Candy" data-color-hex="#a4c8f0" title="2012 Azul Candy"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #8baee2;" data-color-name="2137 Hortênsia" data-color-hex="#8baee2" title="2137 Hortênsia"></button>
+                        
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #118bd4;" data-color-name="2920 Acqua" data-color-hex="#118bd4" title="2920 Acqua"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #104ba1;" data-color-name="2829 Azul Bic" data-color-hex="#104ba1" title="2829 Azul Bic"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #bdeed5;" data-color-name="5020 Verde Candy" data-color-hex="#bdeed5" title="5020 Verde Candy"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #9bc386;" data-color-name="5083 Eco" data-color-hex="#9bc386" title="5083 Eco"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #129b63;" data-color-name="5767 Bandeira" data-color-hex="#129b63" title="5767 Bandeira"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #9ea5a9;" data-color-name="8013 Cinza" data-color-hex="#9ea5a9" title="8013 Cinza"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #73797c;" data-color-name="8212 Cromado" data-color-hex="#73797c" title="8212 Cromado"></button>
+                        <button class="circulo-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #18181b;" data-color-name="8990 Preto" data-color-hex="#18181b" title="8990 Preto"></button>
+                    </div>
+                </div>
+                
+                <!-- Call To Action do Catálogo -->
+                <div class="relative z-10 border-t border-gray-100 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div class="text-center sm:text-left">
+                        <div class="text-xs text-gray-400">Dúvidas sobre combinações de algodão?</div>
+                        <div class="text-sm font-bold text-gray-800">Fale com nossa equipe pelo WhatsApp</div>
+                    </div>
+                    <a id="whatsapp-circulo-btn" href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20fio%20Amigurumi%20Tradicional.%20Tenho%20interesse%20na%20cor%203528%20Carmim." target="_blank" class="w-full sm:w-auto btn-premium-rose px-8 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2.5 group/btn select-none">
                         <span>Consultar Cores</span>
                         <svg class="w-5 h-5 fill-current transition-transform duration-300 group-hover/btn:scale-110" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
@@ -744,6 +1095,59 @@
                         const customMsg = `${baseMsg} Tenho interesse na cor ${name}.`;
                         const encodedMsg = encodeURIComponent(customMsg);
                         whatsappColorsBtn.href = `https://wa.me/5511999999999?text=${encodedMsg}`;
+                    });
+                });
+            }
+
+            // === Seletor de Cores Interativo - Chenille ===
+            const chenilleColorBtns = document.querySelectorAll('.chenille-color-dot-btn');
+            const chenilleSelectedColorIndicator = document.getElementById('chenille-selected-color-indicator');
+            const chenilleSelectedColorName = document.getElementById('chenille-selected-color-name');
+            const whatsappChenilleBtn = document.getElementById('whatsapp-chenille-btn');
+
+            if (chenilleColorBtns.length && chenilleSelectedColorIndicator && chenilleSelectedColorName && whatsappChenilleBtn) {
+                chenilleColorBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Remover classes de ativo de todas as outras bolinhas
+                        chenilleColorBtns.forEach(b => {
+                            b.classList.remove('ring-2', 'ring-[#e11d48]', 'ring-offset-2', 'scale-110', 'shadow-md');
+                        });
+
+                        // Adicionar classes de ativo à bolinha clicada
+                        btn.classList.add('ring-2', 'ring-[#e11d48]', 'ring-offset-2', 'scale-110', 'shadow-md');
+
+                        // Obter dados da cor
+                        const name = btn.getAttribute('data-color-name');
+                        const hex = btn.getAttribute('data-color-hex');
+
+                        // Animando a transição do painel com GSAP para sensação tátil e premium
+                        gsap.fromTo(chenilleSelectedColorIndicator, 
+                            { scale: 0.8, opacity: 0.5 },
+                            { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.5)" }
+                        );
+                        gsap.fromTo(chenilleSelectedColorName,
+                            { x: -10, opacity: 0 },
+                            { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" }
+                        );
+
+                        // Atualizar visualizador
+                        chenilleSelectedColorIndicator.style.backgroundColor = hex;
+                        chenilleSelectedColorName.textContent = name;
+
+                        // Se for Branco (8001), ajustar a borda do indicador para não sumir no fundo
+                        if (name.includes("Branco")) {
+                            chenilleSelectedColorIndicator.classList.add('border-gray-200');
+                            chenilleSelectedColorIndicator.classList.remove('border-white');
+                        } else {
+                            chenilleSelectedColorIndicator.classList.add('border-white');
+                            chenilleSelectedColorIndicator.classList.remove('border-gray-200');
+                        }
+
+                        // Atualizar Link do WhatsApp com a cor pré-selecionada
+                        const baseMsg = "Olá! Gostaria de saber mais sobre o fio Amigurumi Chenille.";
+                        const customMsg = `${baseMsg} Tenho interesse na cor ${name}.`;
+                        const encodedMsg = encodeURIComponent(customMsg);
+                        whatsappChenilleBtn.href = `https://wa.me/5511999999999?text=${encodedMsg}`;
                     });
                 });
             }

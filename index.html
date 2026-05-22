@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- Tipografia -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@100;400;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind Configuration -->
     <script>
@@ -25,6 +25,7 @@
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     }
                 }
@@ -34,6 +35,10 @@
     
     <!-- Estilizações Personalizadas -->
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: #c3122b;
             color: #ffffff;
@@ -106,46 +111,122 @@
             animation: borderGlowWhite 4s infinite alternate;
         }
 
-        /* Smooth Button Hover with Gradient Transition */
-        .btn-solid-white {
+        /* Premium Shimmer, Glow and Glassmorphism Buttons */
+        .btn-premium-primary {
             background: #ffffff;
-            color: #E30613;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #c3122b;
+            border: 1px solid #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn-solid-white::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: #fdfdfd;
-            z-index: -1;
-            transition: opacity 0.4s ease;
-            opacity: 0;
         }
 
-        .btn-solid-white:hover::before {
+        .btn-premium-primary::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -60%; width: 30%; height: 200%;
+            background: linear-gradient(
+                to right, 
+                rgba(255, 255, 255, 0) 0%, 
+                rgba(255, 255, 255, 0.8) 50%, 
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .btn-premium-primary:hover::after {
+            left: 130%;
+            opacity: 1;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-premium-primary:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 20px 35px -5px rgba(255, 255, 255, 0.35), 0 0 20px rgba(255, 255, 255, 0.6);
+            color: #b00f24;
+        }
+
+        .btn-premium-primary:active {
+            transform: translateY(-1px) scale(0.97);
+        }
+
+        .btn-premium-secondary {
+            background: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-premium-secondary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .btn-premium-secondary:hover::before {
             opacity: 1;
         }
 
-        .btn-solid-white:hover {
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-            transform: translateY(-2px);
+        .btn-premium-secondary:hover {
+            transform: translateY(-3px) scale(1.03);
+            border-color: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.14);
+            box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 255, 255, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.25);
         }
 
-        .btn-outline-white {
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            background: transparent;
+        .btn-premium-secondary:active {
+            transform: translateY(-1px) scale(0.97);
+        }
+
+        .btn-premium-emerald {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
             color: #ffffff;
-            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 20px -5px rgba(5, 150, 105, 0.35), 0 8px 10px -6px rgba(5, 150, 105, 0.3);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-outline-white:hover {
-            border-color: rgba(255, 255, 255, 0.9);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        .btn-premium-emerald::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -60%; width: 30%; height: 200%;
+            background: linear-gradient(
+                to right, 
+                rgba(255, 255, 255, 0) 0%, 
+                rgba(255, 255, 255, 0.4) 50%, 
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .btn-premium-emerald:hover::after {
+            left: 130%;
+            opacity: 1;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-premium-emerald:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 20px 35px -5px rgba(5, 150, 105, 0.45), 0 0 20px rgba(5, 150, 105, 0.25);
+            background: linear-gradient(135deg, #05a775 0%, #048862 100%);
+        }
+
+        .btn-premium-emerald:active {
+            transform: translateY(-1px) scale(0.97);
         }
 
         /* GSAP Text Masking containers */
@@ -172,7 +253,7 @@
         }
     </style>
 </head>
-<body class="antialiased min-h-screen relative flex items-center justify-center">
+<body class="antialiased min-h-screen relative flex flex-col items-center justify-start">
 
     <!-- Fundo texturizado - Trama de Lã Suave e Visível -->
     <div class="fixed inset-0 texture-wool pointer-events-none -z-10"></div>
@@ -188,59 +269,66 @@
         <circle cx="2" cy="2" r="1.5" fill="#ffffff"/> <!-- Ponta guia de clique -->
         <circle cx="35" cy="35" r="4.5" fill="#c3122b" stroke="#ffffff" stroke-width="1.5"/>
     </svg>
+    <!-- Glowing Ring that expands on hover -->
+    <div id="cursor-glow" class="fixed top-0 left-0 w-8 h-8 rounded-full border border-white/40 pointer-events-none z-[98] hidden md:block -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all duration-300 ease-out" style="background: rgba(255, 255, 255, 0.08); box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);"></div>
 
-    <!-- Header / Logo -->
-    <header class="absolute top-0 left-0 w-full px-8 py-6 flex justify-between items-center z-50 gs-nav">
-        <div class="flex items-center gap-3">
-            <div class="h-12 w-12 bg-white rounded-full flex items-center justify-center p-[2px] shadow-[0_0_15px_rgba(0,0,0,0.2)] overflow-hidden">
-                <img src="logo.png" alt="Logo da Loja" class="h-full w-full object-contain rounded-full">
-            </div>
-            <span class="font-sans font-bold tracking-widest uppercase text-sm text-white opacity-90 hidden sm:block">Fios Premium</span>
+    <!-- Barra Superior Vermelha -->
+    <div class="w-full bg-[#b00f24] py-2 px-6 md:px-12 z-50 relative border-b border-white/5">
+        <div class="max-w-7xl mx-auto w-full flex justify-end">
+            <span class="font-sans text-xs font-medium tracking-wider text-white flex items-center gap-1.5 select-none">
+                🧵 Novo estoque de linhas de crochê e tricô chegou! Aproveite.
+            </span>
         </div>
-        <div class="hidden md:flex gap-8 font-mono text-xs text-white/70">
-            <a href="#" class="hover:text-white transition-colors">Coleções</a>
-            <a href="#" class="hover:text-white transition-colors">Cores</a>
-            <a href="#" class="hover:text-white transition-colors">Contato</a>
+    </div>
+
+    <!-- Header / Logo (Fundo Branco Premium) -->
+    <header class="w-full bg-white py-4 px-6 md:px-12 z-50 relative shadow-[0_2px_15px_rgba(0,0,0,0.05)] gs-nav">
+        <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+            <div class="flex items-center gap-3 select-none">
+                <span class="font-serif font-black text-2xl sm:text-3xl tracking-tight leading-none">
+                    <span class="text-[#c3122b]">Magazine</span> <span class="text-gray-900">Moderno</span>
+                </span>
+            </div>
+            <div class="hidden md:flex gap-8 font-sans text-xs font-bold uppercase tracking-widest text-gray-700">
+                <a href="#" class="hover:text-[#c3122b] transition-colors duration-300">Coleções</a>
+                <a href="#" class="hover:text-[#c3122b] transition-colors duration-300">Cores</a>
+                <a href="#" class="hover:text-[#c3122b] transition-colors duration-300">Contato</a>
+            </div>
         </div>
     </header>
 
     <!-- Seção Principal (Hero) -->
-    <main class="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 lg:py-24 flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-20">
+    <main class="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 lg:py-16 flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-20 flex-grow">
         
         <!-- Conteúdo de Texto -->
         <div class="w-full lg:w-1/2 flex flex-col items-start pt-6 lg:pt-0">
             <!-- Badge Superior -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 mb-8 gs-stagger backdrop-blur-sm">
-                <span class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#ffffff] animate-pulse"></span>
-                <span class="font-mono text-xs font-semibold tracking-wider text-white uppercase">Fios 100% Naturais</span>
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 mb-8 gs-stagger backdrop-blur-sm select-none">
+                <span class="w-2.5 h-2.5 text-white/95 flex items-center justify-center text-[10px] leading-none">✦</span>
+                <span class="font-sans text-xs font-bold tracking-wider text-white uppercase">Armarinho & Papelaria</span>
             </div>
             
             <!-- Headline com Mask / Stagger Effect -->
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 flex flex-col items-start">
-                <div class="mask-container pb-1 pr-2"><span class="mask-text">A Base Perfeita</span></div>
-                <div class="mask-container pb-1 pr-2"><span class="mask-text flex items-center gap-3">
-                    <span class="text-white">para suas</span>
-                </span></div>
-                <div class="mask-container pb-1 pr-2"><span class="mask-text flex items-center gap-4">
-                    <span class="text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">Criações em Lã.</span> 
-                    <i data-lucide="scissors" class="w-8 h-8 lg:w-10 lg:h-10 text-white hidden md:block opacity-90 mt-2 transform -rotate-45"></i>
-                </span></div>
+            <h1 class="text-5xl sm:text-6xl lg:text-[76px] font-bold leading-[1.05] tracking-tight mb-8 flex flex-col items-start font-serif">
+                <div class="mask-container pb-1 pr-2"><span class="mask-text text-white">Tudo que você precisa</span></div>
+                <div class="mask-container pb-1 pr-2"><span class="mask-text text-white">criar.</span></div>
             </h1>
             
             <!-- Subheadline -->
-            <p class="text-white/80 text-base sm:text-lg lg:text-xl font-light max-w-lg leading-relaxed mb-10 gs-stagger">
-                Descubra nossa coleção premium de lãs macias, duráveis e com cores vibrantes. O toque perfeito e o rendimento ideal para transformar o seu artesanato.
+            <p class="text-white/90 text-base sm:text-lg lg:text-xl font-light max-w-xl leading-relaxed mb-10 gs-stagger">
+                Linhas, tecidos, papelaria e muito mais. Visite a Magazine Moderno ou fale com a gente pelo WhatsApp — atendemos com prazer!
             </p>
             
             <!-- CTAs -->
-            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto gs-stagger">
-                <a href="#catalogo" class="btn-solid-white px-8 py-4 sm:py-5 rounded-md font-semibold flex items-center justify-center gap-3 text-sm uppercase tracking-widest text-primaryRed shadow-lg">
-                    Comprar Fios
-                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <div class="flex flex-col sm:flex-row gap-5 w-full sm:w-auto gs-stagger">
+                <a href="#linhas" class="btn-premium-primary px-8 py-3.5 rounded-lg font-bold flex items-center justify-center text-sm md:text-base transition-all duration-300 group/btn select-none">
+                    <span>Ver Linhas</span>
                 </a>
-                <a href="#cores" class="btn-outline-white px-8 py-4 sm:py-5 rounded-md font-mono text-sm tracking-wider flex items-center justify-center gap-3">
-                    <i data-lucide="palette" class="w-4 h-4"></i>
-                    Paleta de Cores
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20linhas%20da%20Magazine%20Moderno." target="_blank" rel="noopener noreferrer" class="btn-premium-secondary px-8 py-3.5 rounded-lg font-bold flex items-center justify-center gap-2.5 text-sm md:text-base transition-all duration-300 group/btn select-none">
+                    <svg class="w-5 h-5 fill-current transition-transform duration-300 group-hover/btn:scale-110" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                    </svg>
+                    <span>Chame no WhatsApp</span>
                 </a>
             </div>
         </div>
@@ -310,6 +398,145 @@
 
     </main>
 
+    <!-- Seção de Linhas EuroRoma (Segunda Dobra) -->
+    <section id="linhas" class="w-full py-24 px-6 md:px-12 lg:px-24 bg-gray-50 border-t border-gray-100 relative z-10 gs-trigger-lines">
+        <!-- Badge, Título e Subtítulo -->
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-800 mb-6 font-semibold text-xs tracking-wider uppercase select-none">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                ✦ Barbantes Sustentáveis EuroRoma
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-gray-900 mb-6 leading-tight">
+                Cores para todas as criações
+            </h2>
+            <p class="text-gray-600 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto font-sans">
+                Barbante sustentável para fazer arte e o bem para o planeta. Produzido de forma ecológica a partir de resíduos têxteis, sem o uso de água, proporcionando maciez incomparável para seus trabalhos.
+            </p>
+        </div>
+
+        <!-- Grid Split: Showcase de Produto (Esquerda) vs Catálogo de Cores (Direita) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-start max-w-7xl mx-auto">
+            
+            <!-- Coluna Esquerda: Showcase do Cone -->
+            <div class="lg:col-span-5 flex flex-col items-center lg:items-stretch bg-white border border-gray-100 p-6 sm:p-8 rounded-2xl shadow-xl shadow-gray-100/50 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 group relative overflow-hidden">
+                <div class="absolute -right-16 -top-16 w-48 h-48 rounded-full bg-emerald-50/50 blur-2xl pointer-events-none group-hover:bg-emerald-100/50 transition-colors duration-500"></div>
+                
+                <!-- Imagem do Cone -->
+                <div class="relative z-10 flex justify-center mb-8 bg-emerald-50/20 rounded-xl p-6">
+                    <img src="euroroma-spool.png" alt="Cone de Barbante EuroRoma" class="w-48 sm:w-56 h-auto object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)] group-hover:scale-105 transition-transform duration-500">
+                </div>
+                
+                <!-- Informações do Barbante -->
+                <div class="relative z-10 text-center lg:text-left">
+                    <div class="flex items-center justify-center lg:justify-between mb-4">
+                        <span class="font-mono text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-100 px-3 py-1 rounded-full uppercase tracking-wider">Barbante Ecológico</span>
+                        <span class="text-gray-500 text-xs hidden lg:block">Código: ER-400</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-2xl text-gray-900 mb-3">EuroRoma Spool Premium</h3>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Produzido com exclusividade a partir de fios reciclados. Ideal para crochê, tricô, macramê e tapeçaria. O fio ecológico preferido dos artesãos de sucesso.
+                    </p>
+                    
+                    <!-- Ficha Técnica -->
+                    <div class="grid grid-cols-2 gap-4 border-t border-gray-100 pt-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-700">
+                                <i data-lucide="scissors" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400">Espessura</div>
+                                <div class="text-sm font-bold text-gray-800">4/6 (Nº 6)</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-700">
+                                <i data-lucide="scale" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400">Peso/Metragem</div>
+                                <div class="text-sm font-bold text-gray-800">600g / 610m</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coluna Direita: Catálogo de Cores -->
+            <div class="lg:col-span-7 bg-white border border-gray-100 p-6 sm:p-8 rounded-2xl shadow-xl shadow-gray-100/50 flex flex-col justify-between h-full relative overflow-hidden group">
+                <div class="absolute -left-16 -bottom-16 w-48 h-48 rounded-full bg-emerald-50/30 blur-2xl pointer-events-none"></div>
+                
+                <div class="relative z-10 mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-serif font-bold text-2xl text-gray-900">Catálogo de Cores</h3>
+                        <span class="font-mono text-xs text-emerald-800 bg-emerald-50 px-3 py-1 rounded">24 Cores Disponíveis</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Explore nossa ampla cartela de cores vivas e sólidas. Perfeitas para dar personalidade aos seus tapetes, caminhos de mesa, almofadas e bolsas.
+                    </p>
+                    
+                    <!-- Seletor de Cores Interativo -->
+                    <div class="mb-6 p-4 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div id="selected-color-indicator" class="w-8 h-8 rounded-full border-2 border-white shadow-md transition-all duration-300" style="background-color: #10b981;"></div>
+                            <div>
+                                <div class="text-xs text-gray-400 font-medium">Cor Selecionada</div>
+                                <div id="selected-color-name" class="text-base font-bold text-gray-800 font-serif">802 Esmeralda</div>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Em Estoque
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-6 sm:grid-cols-8 gap-4 justify-items-center bg-gray-50/50 p-4 rounded-xl border border-gray-100" id="color-dots-grid">
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #eae3d2;" data-color-name="100 Cru" data-color-hex="#eae3d2" title="100 Cru"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-gray-200 shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ffffff;" data-color-name="200 Branco" data-color-hex="#ffffff" title="200 Branco"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #1a1a1a;" data-color-name="250 Preto" data-color-hex="#1a1a1a" title="250 Preto"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #9ca3af;" data-color-name="270 Cinza" data-color-hex="#9ca3af" title="270 Cinza"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #4b5563;" data-color-name="350 Chumbo" data-color-hex="#4b5563" title="350 Chumbo"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #fef08a;" data-color-name="400 Amarelo Bebê" data-color-hex="#fef08a" title="400 Amarelo Bebê"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #eab308;" data-color-name="450 Ouro" data-color-hex="#eab308" title="450 Ouro"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ca8a04;" data-color-name="470 Mostarda" data-color-hex="#ca8a04" title="470 Mostarda"></button>
+                        
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #fbcfe8;" data-color-name="510 Rosa Bebê" data-color-hex="#fbcfe8" title="510 Rosa Bebê"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #f472b6;" data-color-name="500 Rosa" data-color-hex="#f472b6" title="500 Rosa"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #db2777;" data-color-name="550 Pink" data-color-hex="#db2777" title="550 Pink"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #a21caf;" data-color-name="560 Magenta" data-color-hex="#a21caf" title="560 Magenta"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #c084fc;" data-color-name="600 Lilás Claro" data-color-hex="#c084fc" title="600 Lilás Claro"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #6b21a8;" data-color-name="610 Roxo" data-color-hex="#6b21a8" title="610 Roxo"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #fda4af;" data-color-name="700 Salmão" data-color-hex="#fda4af" title="700 Salmão"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #b45309;" data-color-name="710 Telha" data-color-hex="#b45309" title="710 Telha"></button>
+                        
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #f97316;" data-color-name="750 Laranja" data-color-hex="#f97316" title="750 Laranja"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #f87171;" data-color-name="770 Coral" data-color-hex="#f87171" title="770 Coral"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #84cc16;" data-color-name="801 Verde Limão" data-color-hex="#84cc16" title="801 Verde Limão"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none ring-2 ring-emerald-500 ring-offset-2 scale-110 shadow-md" style="background-color: #10b981;" data-color-name="802 Esmeralda" data-color-hex="#10b981" title="802 Esmeralda"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #14532d;" data-color-name="804 Verde Musgo" data-color-hex="#14532d" title="804 Verde Musgo"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #bfdbfe;" data-color-name="900 Azul Bebê" data-color-hex="#bfdbfe" title="900 Azul Bebê"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #06b6d4;" data-color-name="901 Azul Piscina" data-color-hex="#06b6d4" title="901 Azul Piscina"></button>
+                        <button class="color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #1d4ed8;" data-color-name="903 Azul Royal" data-color-hex="#1d4ed8" title="903 Azul Royal"></button>
+                    </div>
+                </div>
+                
+                <!-- Call To Action do Catálogo -->
+                <div class="relative z-10 border-t border-gray-100 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div class="text-center sm:text-left">
+                        <div class="text-xs text-gray-400">Dúvidas sobre combinações?</div>
+                        <div class="text-sm font-bold text-gray-800">Fale com nossa especialista de fios</div>
+                    </div>
+                    <a id="whatsapp-colors-btn" href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20ajuda%20para%20escolher%20as%20cores%20do%20Barbante%20EuroRoma.%20Tenho%20interesse%20na%20cor%20802%20Esmeralda." target="_blank" class="w-full sm:w-auto btn-premium-emerald px-8 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2.5 group/btn select-none">
+                        <span>Consultar Cores</span>
+                        <svg class="w-5 h-5 fill-current transition-transform duration-300 group-hover/btn:scale-110" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
     <!-- Scripts e Animações -->
     <script>
         // Inicializar Lucide Icons
@@ -367,12 +594,14 @@
             // === Cursor Customizado (Agulha e Linha de Lã) ===
             const needle = document.getElementById('cursor-needle');
             const threadPath = document.getElementById('cursor-thread-path');
+            const cursorGlow = document.getElementById('cursor-glow');
 
-            if (window.matchMedia("(min-width: 768px)").matches && needle && threadPath) {
-                // Remove o cursor padrão do sistema globalmente e nos filhos dinamicamente
-                document.body.style.cursor = 'none';
+            if (window.matchMedia("(min-width: 768px)").matches && needle && threadPath && cursorGlow) {
+                // Remove o cursor padrão do sistema globalmente de forma absoluta para evitar double cursor
                 const style = document.createElement('style');
-                style.innerHTML = `* { cursor: none !important; }`;
+                style.innerHTML = `
+                    body, body * { cursor: none !important; }
+                `;
                 document.head.appendChild(style);
 
                 let mouseX = window.innerWidth / 2;
@@ -395,6 +624,14 @@
                         y: mouseY,
                         duration: 0.05,
                         ease: "none"
+                    });
+
+                    // Posiciona o halo luminoso de clique no centro exato do mouse
+                    gsap.to(cursorGlow, {
+                        x: mouseX,
+                        y: mouseY,
+                        duration: 0.08,
+                        ease: "power2.out"
                     });
 
                     // A linha do fio deve nascer do "cabo" da agulha (topo inferior direito, coordenada 35,35 relativa ao mouse)
@@ -421,24 +658,108 @@
                 }
                 renderThread();
 
-                // Interações charmosas ao pairar sobre links e cards
-                const interactives = document.querySelectorAll('a, button, .glow-card, i.cursor-crosshair, .mask-container, .group');
+                // Interações dinâmicas ao passar por cima de elementos clicáveis
+                const interactives = document.querySelectorAll('a, button, select, input, [role="button"], .glow-card, .group');
                 interactives.forEach(el => {
                     el.addEventListener('mouseenter', () => {
-                        // A agulha inclina de prontidão e o fio brilha
-                        gsap.to(needle, { rotation: -15, scale: 1.15, transformOrigin: "2px 2px", duration: 0.3 });
+                        // O halo brilha e expande, a agulha se inclina em prontidão e a linha fica mais brilhante e espessa
+                        gsap.to(cursorGlow, { scale: 1.5, opacity: 1, duration: 0.3, ease: "back.out(1.7)" });
+                        gsap.to(needle, { rotation: -20, scale: 1.1, transformOrigin: "2px 2px", duration: 0.3 });
                         threadPath.setAttribute('stroke', '#ffffff');
                         threadPath.setAttribute('stroke-width', '4');
                     });
                     el.addEventListener('mouseleave', () => {
+                        // Retorna ao estado suave original
+                        gsap.to(cursorGlow, { scale: 0, opacity: 0, duration: 0.3, ease: "power2.in" });
                         gsap.to(needle, { rotation: 0, scale: 1, duration: 0.3 });
                         threadPath.setAttribute('stroke', 'rgba(255,255,255,0.7)');
                         threadPath.setAttribute('stroke-width', '2.5');
+                    });
+                });
+
+                // Efeito tátil de clique ("stab" na agulha e pulso no halo)
+                window.addEventListener('mousedown', () => {
+                    gsap.to(needle, { scale: 0.85, rotation: -30, duration: 0.1, ease: "power2.out" });
+                    gsap.to(cursorGlow, { scale: 1.0, duration: 0.1, ease: "power2.out" });
+                });
+                window.addEventListener('mouseup', () => {
+                    // Verifica se está pairando sobre um elemento interativo
+                    const hoveredInteractive = document.querySelector('a:hover, button:hover, select:hover, input:hover, [role="button"]:hover, .glow-card:hover, .group:hover');
+                    if (hoveredInteractive) {
+                        gsap.to(needle, { scale: 1.1, rotation: -20, duration: 0.2, ease: "back.out(1.5)" });
+                        gsap.to(cursorGlow, { scale: 1.5, duration: 0.2, ease: "back.out(1.5)" });
+                    } else {
+                        gsap.to(needle, { scale: 1, rotation: 0, duration: 0.2, ease: "power2.out" });
+                        gsap.to(cursorGlow, { scale: 0, duration: 0.2, ease: "power2.out" });
+                    }
+                });
+            }
+
+            // === Seletor de Cores Interativo ===
+            const colorBtns = document.querySelectorAll('.color-dot-btn');
+            const selectedColorIndicator = document.getElementById('selected-color-indicator');
+            const selectedColorName = document.getElementById('selected-color-name');
+            const whatsappColorsBtn = document.getElementById('whatsapp-colors-btn');
+
+            if (colorBtns.length && selectedColorIndicator && selectedColorName && whatsappColorsBtn) {
+                colorBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Remover classes de ativo de todas as outras bolinhas
+                        colorBtns.forEach(b => {
+                            b.classList.remove('ring-2', 'ring-emerald-500', 'ring-offset-2', 'scale-110', 'shadow-md');
+                        });
+
+                        // Adicionar classes de ativo à bolinha clicada
+                        btn.classList.add('ring-2', 'ring-emerald-500', 'ring-offset-2', 'scale-110', 'shadow-md');
+
+                        // Obter dados da cor
+                        const name = btn.getAttribute('data-color-name');
+                        const hex = btn.getAttribute('data-color-hex');
+
+                        // Animando a transição do painel com GSAP para sensação tátil e premium
+                        gsap.fromTo(selectedColorIndicator, 
+                            { scale: 0.8, opacity: 0.5 },
+                            { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.5)" }
+                        );
+                        gsap.fromTo(selectedColorName,
+                            { x: -10, opacity: 0 },
+                            { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" }
+                        );
+
+                        // Atualizar visualizador
+                        selectedColorIndicator.style.backgroundColor = hex;
+                        selectedColorName.textContent = name;
+
+                        // Se for Branco (200), ajustar a borda do indicador para não sumir no fundo
+                        if (name.includes("Branco")) {
+                            selectedColorIndicator.classList.add('border-gray-200');
+                            selectedColorIndicator.classList.remove('border-white');
+                        } else {
+                            selectedColorIndicator.classList.add('border-white');
+                            selectedColorIndicator.classList.remove('border-gray-200');
+                        }
+
+                        // Atualizar Link do WhatsApp com a cor pré-selecionada
+                        const baseMsg = "Olá! Gostaria de ajuda para escolher as cores do Barbante EuroRoma.";
+                        const customMsg = `${baseMsg} Tenho interesse na cor ${name}.`;
+                        const encodedMsg = encodeURIComponent(customMsg);
+                        whatsappColorsBtn.href = `https://wa.me/5511999999999?text=${encodedMsg}`;
                     });
                 });
             }
         });
 
     </script>
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20falar%20com%20a%20Magazine%20Moderno." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[90] flex items-center gap-2 bg-[#25D366] text-white p-3.5 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(37,211,102,0.5)] group active:scale-95 select-none" title="Chame no WhatsApp">
+        <!-- Text visible on hover on desktop -->
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-out whitespace-nowrap text-sm font-bold pl-1 font-sans hidden sm:inline-block">
+            Fale Conosco
+        </span>
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg>
+        <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-35 animate-ping -z-10" style="animation-duration: 2s;"></span>
+    </a>
 </body>
 </html>

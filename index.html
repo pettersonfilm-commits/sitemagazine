@@ -77,6 +77,18 @@
             animation: woolDrift 45s linear infinite;
         }
 
+        .texture-wool-terracotta {
+            background-color: #8c2d19;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(200, 80, 50, 0.4) 0%, rgba(140, 45, 25, 0.8) 50%, rgba(60, 15, 5, 0.95) 100%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 20 16'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10,16 C10,6 2,4 2,-2 M10,16 C10,6 18,4 18,-2' stroke='%233a0e05' stroke-opacity='0.25' stroke-width='8' transform='translate(0,2)'/%3E%3Cpath d='M10,16 C10,6 2,4 2,-2 M10,16 C10,6 18,4 18,-2' stroke='%23d96b52' stroke-opacity='0.2' stroke-width='6'/%3E%3Cpath d='M10,16 C10,6 2,4 2,-2 M10,16 C10,6 18,4 18,-2' stroke='%23ffffff' stroke-opacity='0.1' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+            
+            background-blend-mode: normal, overlay, soft-light;
+            background-size: 100% 100%, 150px 150px, 30px 24px;
+            animation: woolDrift 45s linear infinite;
+        }
+
         /* Border Glow Animation (Branco suave) */
         @keyframes borderGlowWhite {
             0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.2); }
@@ -485,7 +497,7 @@
                         <span class="font-mono text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-100 px-3 py-1 rounded-full uppercase tracking-wider">Barbante Ecológico</span>
                         <span class="text-gray-500 text-xs hidden lg:block">Código: ER-400</span>
                     </div>
-                    <h3 class="font-serif font-bold text-2xl text-gray-900 mb-3">EuroRoma Spool Premium</h3>
+                    <h3 class="font-serif font-bold text-2xl text-gray-900 mb-3">EuroRoma Premium</h3>
                     <p class="text-gray-600 text-sm mb-6 leading-relaxed">
                         Produzido com exclusividade a partir de fios reciclados. Ideal para crochê, tricô, macramê e tapeçaria. O fio ecológico preferido dos artesãos de sucesso.
                     </p>
@@ -888,6 +900,158 @@
         </div>
     </section>
 
+    <!-- Seção Barroco Maxcolor Círculo (Quinta Dobra) -->
+    <section id="barroco" class="w-full py-24 px-6 md:px-12 lg:px-24 texture-wool-terracotta border-t border-white/10 relative z-10 gs-trigger-barroco">
+        <!-- Badge, Título e Subtítulo -->
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-white mb-6 font-semibold text-xs tracking-wider uppercase select-none">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                ✦ Algodão Puro & Cores Vibrantes
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-white mb-6 leading-tight">
+                Barroco Maxcolor Círculo
+            </h2>
+            <p class="text-white/90 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto font-sans">
+                A excelência do algodão puro para valorizar seus trabalhos de crochê e tricô. Com toque super macio e uma cartela extraordinária de cores vivas e duráveis, é o fio ideal para tapetes, caminhos de mesa, mantas e peças decorativas cheias de personalidade.
+            </p>
+        </div>
+
+        <!-- Grid Split: Showcase de Produto (Esquerda) vs Catálogo de Cores (Direita) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-start max-w-7xl mx-auto">
+            
+            <!-- Coluna Esquerda: Showcase do Novelo -->
+            <div class="lg:col-span-5 flex flex-col items-center lg:items-stretch bg-white border border-amber-50 p-6 sm:p-8 rounded-2xl shadow-xl shadow-amber-950/20 hover:shadow-2xl hover:shadow-amber-950/30 transition-all duration-500 group relative overflow-hidden text-gray-900">
+                <div class="absolute -right-16 -top-16 w-48 h-48 rounded-full bg-amber-50/50 blur-2xl pointer-events-none group-hover:bg-amber-100/50 transition-colors duration-500"></div>
+                
+                <!-- Imagem do Novelo -->
+                <div class="relative z-10 flex justify-center mb-8 bg-amber-50/20 rounded-xl p-6">
+                    <img src="barroco-maxcolor.png" alt="Novelo Barroco Maxcolor Círculo" class="w-48 sm:w-56 h-auto object-contain drop-shadow-[0_10px_20px_rgba(180,83,9,0.25)] group-hover:scale-105 transition-transform duration-500">
+                </div>
+                
+                <!-- Informações do Fio -->
+                <div class="relative z-10 text-center lg:text-left">
+                    <div class="flex items-center justify-center lg:justify-between mb-4">
+                        <span class="font-mono text-xs font-bold text-amber-800 bg-amber-50 border border-amber-100 px-3 py-1 rounded-full uppercase tracking-wider">100% Algodão Premium</span>
+                        <span class="text-gray-500 text-xs hidden lg:block">Código: BM-4</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-2xl text-gray-900 mb-3">Barroco Maxcolor Nº 4 / 6</h3>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Toque incomparável e espessura uniforme que proporcionam um acabamento perfeito. Livre de impurezas, com cores firmes que mantêm o brilho mesmo após diversas lavagens.
+                    </p>
+                    
+                    <!-- Ficha Técnica -->
+                    <div class="grid grid-cols-2 gap-4 border-t border-gray-100 pt-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-700">
+                                <i data-lucide="scissors" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400">Espessura (Tex)</div>
+                                <div class="text-sm font-bold text-gray-800">590 (4) / 885 (6)</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-700">
+                                <i data-lucide="scale" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400">Peso/Metragem (Nº4)</div>
+                                <div class="text-sm font-bold text-gray-800">200g / 338m</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coluna Direita: Catálogo de Cores -->
+            <div class="lg:col-span-7 bg-white border border-amber-50 p-6 sm:p-8 rounded-2xl shadow-xl shadow-amber-950/20 flex flex-col justify-between h-full relative overflow-hidden group text-gray-900">
+                <div class="absolute -left-16 -bottom-16 w-48 h-48 rounded-full bg-amber-50/30 blur-2xl pointer-events-none"></div>
+                
+                <div class="relative z-10 mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-serif font-bold text-2xl text-gray-900">Catálogo de Cores</h3>
+                        <span class="font-mono text-xs text-amber-800 bg-amber-50 px-3 py-1 rounded">36 Cores Disponíveis</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Explore nossa ampla cartela de tons puros, desde os neutros e terrosos até as cores mais vibrantes e intensas para destacar cada ponto da sua peça.
+                    </p>
+                    
+                    <!-- Seletor de Cores Interativo -->
+                    <div class="mb-6 p-4 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div id="barroco-selected-color-indicator" class="w-8 h-8 rounded-full border-2 border-white shadow-md transition-all duration-300" style="background-color: #c3122b;"></div>
+                            <div>
+                                <div class="text-xs text-gray-400 font-medium">Cor Selecionada</div>
+                                <div id="barroco-selected-color-name" class="text-base font-bold text-gray-800 font-serif">3402 Vermelho Círculo</div>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-100">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                            Em Estoque
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-6 sm:grid-cols-8 gap-4 justify-items-center bg-gray-50/50 p-4 rounded-xl border border-gray-100" id="barroco-color-dots-grid">
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ffffff;" data-color-name="8001 Branco" data-color-hex="#ffffff" title="8001 Branco"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ebd2c3;" data-color-name="7525 Porcelana" data-color-hex="#ebd2c3" title="7525 Porcelana"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #c49d7f;" data-color-name="7625 Castanha" data-color-hex="#c49d7f" title="7625 Castanha"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #9a7f6e;" data-color-name="7713 Lenha" data-color-hex="#9a7f6e" title="7713 Lenha"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #874735;" data-color-name="7220 Tâmara" data-color-hex="#874735" title="7220 Tâmara"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #4c352e;" data-color-name="7311 Tabaco" data-color-hex="#4c352e" title="7311 Tabaco"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #634336;" data-color-name="7382 Chocolate" data-color-hex="#634336" title="7382 Chocolate"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #2b1f1d;" data-color-name="7319 Café" data-color-hex="#2b1f1d" title="7319 Café"></button>
+                        
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #fed83e;" data-color-name="1289 Canário" data-color-hex="#fed83e" title="1289 Canário"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #fda42a;" data-color-name="1317 Solar" data-color-hex="#fda42a" title="1317 Solar"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #f7b233;" data-color-name="1449 Ouro" data-color-hex="#f7b233" title="1449 Ouro"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #fae9b3;" data-color-name="1112 Creme" data-color-hex="#fae9b3" title="1112 Creme"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #d8297b;" data-color-name="3182 Pitaya" data-color-hex="#d8297b" title="3182 Pitaya"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #b11f26;" data-color-name="3201 Malagueta" data-color-hex="#b11f26" title="3201 Malagueta"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none ring-2 ring-amber-500 ring-offset-2 scale-110 shadow-md" style="background-color: #c3122b;" data-color-name="3402 Vermelho Círculo" data-color-hex="#c3122b" title="3402 Vermelho Círculo"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #920f26;" data-color-name="3528 Carmim" data-color-hex="#920f26" title="3528 Carmim"></button>
+                        
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #e73c4d;" data-color-name="3583 Tulipa" data-color-hex="#e73c4d" title="3583 Tulipa"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #731e3b;" data-color-name="3334 Mandala" data-color-hex="#731e3b" title="3334 Mandala"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ebbad4;" data-color-name="3077 Quartzo" data-color-hex="#ebbad4" title="3077 Quartzo"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #f586ab;" data-color-name="3131 Chiclete" data-color-hex="#f586ab" title="3131 Chiclete"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #ebdcd2;" data-color-name="6006 Lilás Candy" data-color-hex="#ebdcd2" title="6006 Lilás Candy"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #998cc2;" data-color-name="6313 Ametista" data-color-hex="#998cc2" title="6313 Ametista"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #5b2866;" data-color-name="6399 Uva" data-color-hex="#5b2866" title="6399 Uva"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #c1f0db;" data-color-name="2204 Verde Candy" data-color-hex="#c1f0db" title="2204 Verde Candy"></button>
+                        
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #039f72;" data-color-name="5203 Hortelã" data-color-hex="#039f72" title="5203 Hortelã"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #aed94b;" data-color-name="5743 Neon" data-color-hex="#aed94b" title="5743 Neon"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #129b63;" data-color-name="5767 Bandeira" data-color-hex="#129b63" title="5767 Bandeira"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #a4c8f0;" data-color-name="2012 Azul Candy" data-color-hex="#a4c8f0" title="2012 Azul Candy"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #2abac8;" data-color-name="2195 Aqua" data-color-hex="#2abac8" title="2195 Aqua"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #104ba1;" data-color-name="2829 Azul Bic" data-color-hex="#104ba1" title="2829 Azul Bic"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #0d2847;" data-color-name="2856 Azul Profundo" data-color-hex="#0d2847" title="2856 Azul Profundo"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #a2a0a1;" data-color-name="8314 Cinza" data-color-hex="#a2a0a1" title="8314 Cinza"></button>
+                        
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #8c898b;" data-color-name="8323 Cromo" data-color-hex="#8c898b" title="8323 Cromo"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #615e60;" data-color-name="8336 Grafite" data-color-hex="#615e60" title="8336 Grafite"></button>
+                        <button class="barroco-color-dot-btn w-9 h-9 rounded-full border-2 border-white shadow-sm transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" style="background-color: #18181b;" data-color-name="8990 Preto" data-color-hex="#18181b" title="8990 Preto"></button>
+                    </div>
+                </div>
+                
+                <!-- Call To Action do Catálogo -->
+                <div class="relative z-10 border-t border-gray-100 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div class="text-center sm:text-left">
+                        <div class="text-xs text-gray-400">Dúvidas sobre combinações do Barroco?</div>
+                        <div class="text-sm font-bold text-gray-800">Fale com nossa equipe pelo WhatsApp</div>
+                    </div>
+                    <a id="whatsapp-barroco-btn" href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20fio%20Barroco%20Maxcolor%20Círculo.%20Tenho%20interesse%20na%20cor%203402%20Vermelho%20Círculo." target="_blank" class="w-full sm:w-auto btn-premium-rose px-8 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2.5 group/btn select-none" style="background: linear-gradient(135deg, #d97706 0%, #b45309 100%);">
+                        <span>Consultar Cores</span>
+                        <svg class="w-5 h-5 fill-current transition-transform duration-300 group-hover/btn:scale-110" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
     <!-- Scripts e Animações -->
     <script>
         // Inicializar Lucide Icons
@@ -1148,6 +1312,112 @@
                         const customMsg = `${baseMsg} Tenho interesse na cor ${name}.`;
                         const encodedMsg = encodeURIComponent(customMsg);
                         whatsappChenilleBtn.href = `https://wa.me/5511999999999?text=${encodedMsg}`;
+                    });
+                });
+            }
+
+            // === Seletor de Cores Interativo - Círculo Tradicional ===
+            const circuloColorBtns = document.querySelectorAll('.circulo-color-dot-btn');
+            const circuloSelectedColorIndicator = document.getElementById('circulo-selected-color-indicator');
+            const circuloSelectedColorName = document.getElementById('circulo-selected-color-name');
+            const whatsappCirculoBtn = document.getElementById('whatsapp-circulo-btn');
+
+            if (circuloColorBtns.length && circuloSelectedColorIndicator && circuloSelectedColorName && whatsappCirculoBtn) {
+                circuloColorBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Remover classes de ativo de todas as outras bolinhas
+                        circuloColorBtns.forEach(b => {
+                            b.classList.remove('ring-2', 'ring-rose-500', 'ring-offset-2', 'scale-110', 'shadow-md');
+                        });
+
+                        // Adicionar classes de ativo à bolinha clicada
+                        btn.classList.add('ring-2', 'ring-rose-500', 'ring-offset-2', 'scale-110', 'shadow-md');
+
+                        // Obter dados da cor
+                        const name = btn.getAttribute('data-color-name');
+                        const hex = btn.getAttribute('data-color-hex');
+
+                        // Animando a transição do painel com GSAP para sensação tátil e premium
+                        gsap.fromTo(circuloSelectedColorIndicator, 
+                            { scale: 0.8, opacity: 0.5 },
+                            { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.5)" }
+                        );
+                        gsap.fromTo(circuloSelectedColorName,
+                            { x: -10, opacity: 0 },
+                            { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" }
+                        );
+
+                        // Atualizar visualizador
+                        circuloSelectedColorIndicator.style.backgroundColor = hex;
+                        circuloSelectedColorName.textContent = name;
+
+                        // Se for Branco (8001), ajustar a borda do indicador para não sumir no fundo
+                        if (name.includes("Branco")) {
+                            circuloSelectedColorIndicator.classList.add('border-gray-200');
+                            circuloSelectedColorIndicator.classList.remove('border-white');
+                        } else {
+                            circuloSelectedColorIndicator.classList.add('border-white');
+                            circuloSelectedColorIndicator.classList.remove('border-gray-200');
+                        }
+
+                        // Atualizar Link do WhatsApp com a cor pré-selecionada
+                        const baseMsg = "Olá! Gostaria de saber mais sobre o fio Amigurumi Tradicional.";
+                        const customMsg = `${baseMsg} Tenho interesse na cor ${name}.`;
+                        const encodedMsg = encodeURIComponent(customMsg);
+                        whatsappCirculoBtn.href = `https://wa.me/5511999999999?text=${encodedMsg}`;
+                    });
+                });
+            }
+
+            // === Seletor de Cores Interativo - Barroco Maxcolor ===
+            const barrocoColorBtns = document.querySelectorAll('.barroco-color-dot-btn');
+            const barrocoSelectedColorIndicator = document.getElementById('barroco-selected-color-indicator');
+            const barrocoSelectedColorName = document.getElementById('barroco-selected-color-name');
+            const whatsappBarrocoBtn = document.getElementById('whatsapp-barroco-btn');
+
+            if (barrocoColorBtns.length && barrocoSelectedColorIndicator && barrocoSelectedColorName && whatsappBarrocoBtn) {
+                barrocoColorBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Remover classes de ativo de todas as outras bolinhas
+                        barrocoColorBtns.forEach(b => {
+                            b.classList.remove('ring-2', 'ring-amber-500', 'ring-offset-2', 'scale-110', 'shadow-md');
+                        });
+
+                        // Adicionar classes de ativo à bolinha clicada
+                        btn.classList.add('ring-2', 'ring-amber-500', 'ring-offset-2', 'scale-110', 'shadow-md');
+
+                        // Obter dados da cor
+                        const name = btn.getAttribute('data-color-name');
+                        const hex = btn.getAttribute('data-color-hex');
+
+                        // Animando a transição do painel com GSAP para sensação tátil e premium
+                        gsap.fromTo(barrocoSelectedColorIndicator, 
+                            { scale: 0.8, opacity: 0.5 },
+                            { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.5)" }
+                        );
+                        gsap.fromTo(barrocoSelectedColorName,
+                            { x: -10, opacity: 0 },
+                            { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" }
+                        );
+
+                        // Atualizar visualizador
+                        barrocoSelectedColorIndicator.style.backgroundColor = hex;
+                        barrocoSelectedColorName.textContent = name;
+
+                        // Se for Branco (8001), ajustar a borda do indicador para não sumir no fundo
+                        if (name.includes("Branco")) {
+                            barrocoSelectedColorIndicator.classList.add('border-gray-200');
+                            barrocoSelectedColorIndicator.classList.remove('border-white');
+                        } else {
+                            barrocoSelectedColorIndicator.classList.add('border-white');
+                            barrocoSelectedColorIndicator.classList.remove('border-gray-200');
+                        }
+
+                        // Atualizar Link do WhatsApp com a cor pré-selecionada
+                        const baseMsg = "Olá! Gostaria de saber mais sobre o fio Barroco Maxcolor Círculo.";
+                        const customMsg = `${baseMsg} Tenho interesse na cor ${name}.`;
+                        const encodedMsg = encodeURIComponent(customMsg);
+                        whatsappBarrocoBtn.href = `https://wa.me/5511999999999?text=${encodedMsg}`;
                     });
                 });
             }
